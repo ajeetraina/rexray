@@ -8,5 +8,5 @@
 
 # Installation
 
-[Linux]
+[Linux]<br>
 [Windows]
