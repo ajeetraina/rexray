@@ -384,3 +384,18 @@ kubernetes-minion-group-39rs   Ready                      <none>    3m        v1
 kubernetes-minion-group-3f46   Ready                      <none>    3m        v1.9.3
 kubernetes-minion-group-3fpc   Ready                      <none>    3m        v1.9.3
 ```
+
+#
+
+```
+/kubectl get --all-namespaces services
+NAMESPACE     NAME                   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
+default       kubernetes             ClusterIP   10.0.0.1       <none>        443/TCP             6m
+kube-system   default-http-backend   NodePort    10.0.68.176    <none>        80:30147/TCP        6m
+kube-system   heapster               ClusterIP   10.0.82.84     <none>        80/TCP              6m
+kube-system   kube-dns               ClusterIP   10.0.0.10      <none>        53/UDP,53/TCP       6m
+kube-system   kubernetes-dashboard   ClusterIP   10.0.10.53     <none>        443/TCP             6m
+kube-system   metrics-server         ClusterIP   10.0.124.11    <none>        443/TCP             6m
+kube-system   monitoring-grafana     ClusterIP   10.0.225.128   <none>        80/TCP              6m
+kube-system   monitoring-influxdb    ClusterIP   10.0.41.250    <none>        8083/TCP,8086/TCP   6m
+```
