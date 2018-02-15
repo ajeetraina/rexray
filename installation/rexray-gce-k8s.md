@@ -165,4 +165,128 @@ Encryption
 Automatic
 Equivalent REST
 ```
+## Cloning the Repository
 
+```
+git clone https://github.com/ajeetraina/rexray
+```
+
+## Change directory
+
+```
+cd rexray/installation
+```
+## Create a Pod
+
+```
+
+$ kubectl create -f mypod.yml 
+pod "test-pd" created
+```
+
+```
+$ kubectl get po
+NAME      READY     STATUS    RESTARTS   AGE
+test-pd   1/1       Running   0          21s
+```
+```
+$ kubectl describe po test-pd
+kubectl describe po test-pd
+Name:         test-pd
+Namespace:    default
+Node:         kubernetes-minion-group-39rs/10.128.0.3
+Start Time:   Thu, 15 Feb 2018 14:29:23 +0000
+Labels:       <none>
+Annotations:  kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container tes
+t-container
+Status:       Running
+IP:           10.64.1.8
+Containers:
+  test-container:
+    Container ID:   docker://7e563a55ddce5e2be0e2c1f92aec283862752f58cc3cbb5574cdaa3ca84bbd42
+    Image:          k8s.gcr.io/test-webserver
+    Image ID:       docker-pullable://k8s.gcr.io/test-webserver@sha256:f63e365c13646f231ec4a16
+791c6133ddd7b80fcd1947f41ab193968e02b0745
+    Port:           <none>
+    State:          Running
+      Started:      Thu, 15 Feb 2018 14:29:34 +0000
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /test-pd from test-volume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gtb8n (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          True 
+  IP:           10.64.1.8
+Containers:
+  test-container:
+    Container ID:   docker://7e563a55ddce5e2be0e2c1f92aec283862752f58cc3cbb5574cdaa3ca84bbd42
+    Image:          k8s.gcr.io/test-webserver
+    Image ID:       docker-pullable://k8s.gcr.io/test-webserver@sha256:f63e365c13646f231ec4a16
+791c6133ddd7b80fcd1947f41ab193968e02b0745
+    Port:           <none>
+    State:          Running
+      Started:      Thu, 15 Feb 2018 14:29:34 +0000
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /test-pd from test-volume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gtb8n (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          True 
+  PodScheduled   True 
+Volumes:
+  test-volume:
+    Type:       GCEPersistentDisk (a Persistent Disk resource in Google Compute Engine)
+    PDName:     storage1
+    FSType:     ext4
+    Partition:  0
+    ReadOnly:   false
+  default-token-gtb8n:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gtb8n
+    Optional:    false
+    ..
+    Volumes:
+  test-volume:
+    Type:       GCEPersistentDisk (a Persistent Disk resource in Google Compute Engine)
+    PDName:     storage1
+    FSType:     ext4
+    Partition:  0
+    ReadOnly:   false
+  default-token-gtb8n:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gtb8n
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason                 Age   From                                   Message
+  ----    ------                 ----  ----                                   -------
+  Normal  Scheduled              42s   default-scheduler                      Successfully ass
+igned test-pd to kubernetes-minion-group-39rs
+  Normal  SuccessfulMountVolume  42s   kubelet, kubernetes-minion-group-39rs  MountVolume.SetU
+p succeeded for volume "default-token-gtb8n"
+  Normal  SuccessfulMountVolume  32s   kubelet, kubernetes-minion-group-39rs  MountVolume.SetU
+p succeeded for volume "test-volume"
+  Normal  Pulling                31s   kubelet, kubernetes-minion-group-39rs  pulling image "k
+8s.gcr.io/test-webserver"
+  Normal  Pulled                 31s   kubelet, kubernetes-minion-group-39rs  Successfully pul
+led image "k8s.gcr.io/test-webserver"
+  Normal  Created                31s   kubelet, kubernetes-minion-group-39rs  Created containe
+r
+  Normal  Started                31s   kubelet, kubernetes-minion-group-39rs  Started containe
+r
+ ```
