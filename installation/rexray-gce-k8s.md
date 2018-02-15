@@ -2,7 +2,9 @@
 
 # Pre-requisite
 
-- A Ubuntu 17.10 instance 
+- Create a Ubuntu 17.10 instance with name - "kubernetes-master" as shown below on GCE Platform
+
+![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_0.png)
 
 # Installing Kubernetes
 
