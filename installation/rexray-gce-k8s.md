@@ -2,7 +2,7 @@
 
 # Pre-requisite
 
-- 1 Master & 2 Worker Node Instance
+- A Ubuntu 17.10 instance 
 
 # Installing Kubernetes
 
