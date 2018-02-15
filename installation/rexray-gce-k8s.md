@@ -290,3 +290,5 @@ r
   Normal  Started                31s   kubelet, kubernetes-minion-group-39rs  Started containe
 r
  ```
+ 
+ ![alt text](https://github.com/ajeetraina/rexray/blob/master/GCE_1.png)
