@@ -2,14 +2,13 @@
 
 # Pre-requisite
 
-- Create a Ubuntu 17.10 instance with name - "kubernetes-master" as shown below on GCE Platform
+- Create a Ubuntu 17.10 instance
 
-![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_0.png)
 
 # Installing Kubernetes
 
 ```
-babacoders@manager1:~$ sudo curl -sS https://get.k8s.io | bash
+$ sudo curl -sS https://get.k8s.io | bash
 ```
 
 
@@ -31,8 +30,11 @@ InfluxDB is running at https://104.198.234.137/api/v1/namespaces/kube-system/ser
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
+This creates 1 manager and 3 worker(minions) nodes as shown below:
 
- ![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_1.png)
+![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_2.png)
+
+ 
 # Using Kubectl 
 
 ```
@@ -294,5 +296,5 @@ r
 r
  ```
  
- ![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_2.png)
+ ![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_1.png)
  
