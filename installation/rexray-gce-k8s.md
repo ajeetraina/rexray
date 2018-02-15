@@ -84,3 +84,85 @@ kube-system   metrics-server-v0.2.1-7f8dd98c8f-6vfw8          2/2       Running 
 kube-system   monitoring-influxdb-grafana-v4-554f5d97-2n8mv   2/2       Running   0          10m
 kube-system   rescheduler-v0.3.1-kubernetes-master            1/1       Running   0          9m
 ```
+
+## Installing RexRay Volume Plugin
+
+```
+docker plugin install --grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
+
+
+latest: Pulling from rexray/gcepd
+9d3ade925ffa: Download complete 
+Digest: sha256:191be8b0fa8f9ab781b61593047310d17f847dc8b8361d4d4731149ecc3ea10d
+Status: Downloaded newer image for rexray/gcepd:latest
+Installed plugin rexray/gcepd
+```
+
+## Listing the Volume Plugins
+
+```
+docker plugin ls
+ID                  NAME                  DESCRIPTION                        ENABLED
+f6796ddcd771        rexray/gcepd:latest   REX-Ray for GCE Persistent Disks   true
+```
+
+## Creating the Storage Volume
+
+```
+$ docker volume create --driver rexray/gcepd --name storage1 -o 32
+storage1
+```
+## Listing the Volume 
+```
+$ docker volume ls
+DRIVER                VOLUME NAME
+rexray/gcepd:latest   storage1
+```
+
+## Inspecting the RexRay Volume
+```
+$ docker volume inspect storage1
+[
+    {
+        "Driver": "rexray/gcepd:latest",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/plugins/f6796ddcd7711b7ad931a2a4235441adb4454d434b7314400099146876a395d0/rootfs",
+        "Name": "storage1",
+        "Options": {
+            "32": ""
+        },
+        "Scope": "global",
+        "Status": {
+            "availabilityZone": "us-central1-b",
+            "fields": null,
+            "iops": 0,
+            "name": "storage1",
+            "server": "gcepd",
+            "service": "gcepd",
+            "size": 16,
+            "type": "pd-ssd"
+        }
+    }
+]
+
+```
+
+## Verifying the Disk under Google Cloud Platform
+
+```
+ storage1
+Type
+SSD persistent disk
+Size
+16 GB
+Zone
+us-central1-b
+Estimated performance
+Operation Type	Read	Write
+Sustained random IOPS limit	480.00	480.00
+Sustained throughput limit (MB/s)	7.68	7.68
+Encryption
+Automatic
+Equivalent REST
+```
+
