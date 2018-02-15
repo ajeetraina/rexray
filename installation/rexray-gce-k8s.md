@@ -30,6 +30,19 @@ InfluxDB is running at https://104.198.234.137/api/v1/namespaces/kube-system/ser
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
+
+```
+kubectl get services -n kube-system
+NAME                   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
+default-http-backend   NodePort    10.0.68.176    <none>        80:30147/TCP        21h
+heapster               ClusterIP   10.0.82.84     <none>        80/TCP              21h
+kube-dns               ClusterIP   10.0.0.10      <none>        53/UDP,53/TCP       21h
+kubernetes-dashboard   ClusterIP   10.0.10.53     <none>        443/TCP             21h
+metrics-server         ClusterIP   10.0.124.11    <none>        443/TCP             21h
+monitoring-grafana     ClusterIP   10.0.225.128   <none>        80/TCP              21h
+monitoring-influxdb    ClusterIP   10.0.41.250    <none>        8083/TCP,8086/TCP   21h
+```
+
 This creates 1 manager and 3 worker(minions) nodes as shown below:
 
 ![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_2.png)
