@@ -26,7 +26,17 @@ This design requires minimal operational dependencies and is still able to provi
 
 Refer [this](https://github.com/ajeetraina/rexray/libstorage/concept.md) to deep dive into architecture.
 
-#
+# What is CSI? Does RexRay support CSI?
+
+The Container Storage Interface (CSI) specification is an industry-wide collaboration between the companies that make container orchestration platforms such as Kubernetes, Mesos, and Docker.Container Storage Interface (CSI), the community has cemented the role of storage and volumes with applications. This enables storage platforms and tools to focus and create trusted integrations to universally support persistent applications
+
+REX-Ray supports CSI and adheres to all of the specification's requirements, such as idempotency. This means that all existing storage providers support CSI and are idempotent as well. Not only that, but REX-Ray supports native CSI plug-ins!
+
+REX-Ray provided important early validation to the CSI specification by releasing initial support in 0.10. The upcoming REX-Ray 0.12 release will include CSI 0.1 support for all existing storage drivers and any new native CSI drivers.
+
+
+
+
 
 
 
