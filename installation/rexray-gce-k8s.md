@@ -30,6 +30,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
 
+ ![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_1.png)
 # Using Kubectl 
 
 ```
@@ -291,4 +292,5 @@ r
 r
  ```
  
- ![alt text](https://github.com/ajeetraina/rexray/blob/master/GCE_1.png)
+ ![alt text](https://github.com/ajeetraina/rexray/blob/master/images/GCE_2.png)
+ 
